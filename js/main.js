@@ -7,6 +7,7 @@ var $mostrarTemas= $("#mostrarTemas");
 var cargarPagina = function(){
   mostrarTodosTemas();
   $("#add-form").submit(agregarTemaNuevo);
+  $("#search-form").submit(filtrarTemas);
 };
 var mostrarTodosTemas = function(){
  $.getJSON(todosLosTemas.url, function(temas){
@@ -25,11 +26,12 @@ var crearTema = function(tema){
   //Para crear elementos
   var $contenedorTema = $("<div />");
   var $tituloTema = $("<h1 />");
-  var $contenido = $("<p />");
+  // $tituloTema.attr("id", Date.Now())
+  var $contenido = $("<span />");
   $contenido.text(contenidoTema);
-  var $autor = $("<p></p>");
+  var $autor = $("<p />");
   $autor.text(autor);
-  var $contadorRespuestas = $("<p></p>");
+  var $contadorRespuestas = $("<p />");
   $contadorRespuestas.text(numRespuestas);
 
   //Para agregarles clases
@@ -61,7 +63,24 @@ var agregarTemaNuevo = function(e){
     crearTema(tema);
     $("#myModal").modal("hide");
   });
+
 }
+
+//Para filtrar los temas
+var filtrarTemas = function(e){
+  e.preventDefault();
+  var criterioBusqueda = $("#search").val().toLowerCase();
+  var objetoFiltro = $("body").find("#mostrarTemas").find("div").find("span");
+  console.log(objetoFiltro);
+  var temasFiltrados = objetoFiltro.filter(objeto == objeto.nombre == criterioBusqueda)
+  // {
+  //   console.log(objeto);
+  //   console.log(nombre);
+  //    return objeto..toLowerCase().indexOf(criterioBusqueda) >= 0;
+  // });
+  mostrarTodosTemas(temasFiltrados);
+}
+
 
 
 
