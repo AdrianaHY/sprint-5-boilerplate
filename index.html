@@ -4,17 +4,55 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title></title>
   </head>
-  <body>
+  <body class="container">
+    <header>
+      <div class="page-header">
+        <h1>Multiforo<small> Encuentra todo lo que buscas...</small></h1>
+      </div>
+    </header>
+    <!-- modal para crear nuevo tema -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+     Agregar tarea
+   </button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <form id="add-form">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Nuevo tema</h4>
+             </div>
+             <div class="modal-body">
+                <div class="form-group">
+                  <!-- <label>Ingresa un nuevo tema!</label>
+                  <input type="text" class="form-control" id="titulo-tema" placeholder="Título"> -->
+                  <label>Contenido</label>
+                  <textarea  id="contenido" name="name" rows="8" cols="80" placeholder="Cuéntanos lo que se te ocurra!"></textarea>
+                  <label>Autor</label>
+                  <input type="text" class="form-control" id="autor-tema" placeholder="Autor">
+                </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+               <button type="submit" class="btn btn-primary">Agregar</button>
+             </div>
+           </div>
+          </form>
+       </div>
+   </div>
 
-    <h1>Aqui van todos los temas</h1>
-    
+  <section id="mostrarTemas">
+
+  </section>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/functions.js"></script>
     <script src="js/main.js"></script>
-    
+
   </body>
 </html>
