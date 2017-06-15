@@ -72,12 +72,12 @@ var filtrarTemas = function(e){
   var criterioBusqueda = $("#search").val().toLowerCase();
   var objetoFiltro = $("body").find("#mostrarTemas").find("div").find("span");
   console.log(objetoFiltro);
-  var temasFiltrados = objetoFiltro.filter(objeto == objeto.nombre == criterioBusqueda)
-  // {
-  //   console.log(objeto);
-  //   console.log(nombre);
-  //    return objeto..toLowerCase().indexOf(criterioBusqueda) >= 0;
-  // });
+  var temasFiltrados = objetoFiltro.filter(function(objeto,nombre)
+  {
+    console.log(objeto);
+    console.log(nombre);
+    //  return objeto..toLowerCase().indexOf(criterioBusqueda) >= 0;
+  });
   mostrarTodosTemas(temasFiltrados);
 }
 
